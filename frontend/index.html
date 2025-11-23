@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Recognition AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Emotion Recognition AI</h1>
+            <p class="subtitle">Advanced facial emotion detection powered by ResNet & Gemini AI</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="upload">📁 Upload Image</button>
+                    <button class="tab-btn" data-tab="webcam">📷 Live Webcam</button>
+                </div>
+
+                <!-- Upload Tab -->
+                <div class="tab-content active" id="upload-tab">
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-icon">📤</div>
+                        <p>Drag & drop an image here</p>
+                        <p class="upload-hint">or click to browse</p>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                    </div>
+                    
+                    <div class="preview-container" id="preview-container" style="display: none;">
+                        <img id="preview-image" src="" alt="Preview">
+                        <button class="btn-secondary" id="clear-btn">Clear</button>
+                    </div>
+
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" id="heatmap-check" checked>
+                            <span>Generate Heatmap Visualization</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" id="gemini-check" checked>
+                            <span>Include AI Insights (Gemini)</span>
+                        </label>
+                    </div>
+
+                    <button class="btn-primary" id="analyze-btn" disabled>Analyze Emotion</button>
+                </div>
+
+                <!-- Webcam Tab -->
+                <div class="tab-content" id="webcam-tab">
+                    <div class="webcam-container">
+                        <video id="webcam" autoplay playsinline></video>
+                        <canvas id="webcam-canvas" style="display: none;"></canvas>
+                    </div>
+                    
+                    <div class="webcam-controls">
+                        <button class="btn-primary" id="start-webcam-btn">Start Webcam</button>
+                        <button class="btn-secondary" id="stop-webcam-btn" style="display: none;">Stop Webcam</button>
+                        <button class="btn-primary" id="capture-btn" style="display: none;">Capture & Analyze</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="results-section" style="display: none;">
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing emotion...</p>
+                </div>
+
+                <div id="results-content" style="display: none;">
+                    <!-- Emotion Result -->
+                    <div class="emotion-card">
+                        <div class="emotion-header">
+                            <span class="emotion-icon" id="emotion-icon">😊</span>
+                            <div>
+                                <h2 id="emotion-label">Happy</h2>
+                                <p class="confidence-text">Confidence: <span id="confidence">95%</span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidence-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- All Probabilities -->
+                    <div class="probabilities-card">
+                        <h3>All Emotions</h3>
+                        <div id="probabilities-list"></div>
+                    </div>
+
+                    <!-- Gemini Insight -->
+                    <div class="insight-card" id="insight-card" style="display: none;">
+                        <h3>🤖 AI Insight</h3>
+                        <p id="gemini-insight"></p>
+                    </div>
+
+                    <!-- Heatmap Visualization -->
+                    <div class="heatmap-card" id="heatmap-card" style="display: none;">
+                        <h3>🔥 Model Attention Heatmap</h3>
+                        <img id="heatmap-image" src="" alt="Heatmap">
+                        <p class="heatmap-hint">Red areas indicate where the model focused most</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by ResNet50V2 & Google Gemini 2.5 Flash</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

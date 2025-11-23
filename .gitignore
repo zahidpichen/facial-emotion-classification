@@ -1,5 +1,10 @@
 /.venv
-/Dataset(images)
+/.venv_gpu
+/data
+*.vscode
 /facial_expression_model.h5
 /label_encoder.json
 /__pycache__
+*.json
+/resnet_emotion_model.h5
+/resnet_emotion_phase1.h5
