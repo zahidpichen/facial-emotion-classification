@@ -1,8 +1,8 @@
-# 🧠 Advanced Emotion Recognition System
+# Advanced Emotion Recognition System
 
 A state-of-the-art facial emotion recognition system combining ResNet50V2 deep learning with Google Gemini AI for intelligent insights.
 
-## ✨ Features
+## Features
 
 - **Advanced Deep Learning**: ResNet50V2 with transfer learning and fine-tuning
 - **7 Emotion Classes**: Happy, Sad, Angry, Surprise, Fear, Disgust, Neutral
@@ -12,7 +12,7 @@ A state-of-the-art facial emotion recognition system combining ResNet50V2 deep l
 - **FastAPI Backend**: High-performance REST API
 - **Confidence Validation**: Only shows results when model is confident
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -29,7 +29,7 @@ A state-of-the-art facial emotion recognition system combining ResNet50V2 deep l
 
 2. **Create virtual environment**
    ```bash
-   python -m venv venv
+   python -m venv venv_gpu
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
@@ -85,7 +85,7 @@ This will:
    
    Then visit `http://localhost:3000`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 facial-emotion-classification/
@@ -159,7 +159,7 @@ const API_BASE_URL = 'http://localhost:8000';
 2. Click "Start Webcam"
 3. Click "Capture & Analyze" to analyze current frame
 
-## 🧪 Model Performance
+## Model Performance
 
 The improved training script includes:
 - **Two-phase training**: Custom head → Fine-tuning
@@ -170,7 +170,7 @@ The improved training script includes:
 
 Expected accuracy: 75-85% (depends on your dataset quality)
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### "Model not found" error
 - Ensure `resnet_emotion_model.h5` exists in the root directory
@@ -196,7 +196,7 @@ Expected accuracy: 75-85% (depends on your dataset quality)
 - Use HTTPS or localhost (required by browsers)
 - Try different browser if issues persist
 
-## 🚀 Improving Model Accuracy
+## Improving Model Accuracy
 
 If you're getting "Surprise" predictions for everything:
 
@@ -219,14 +219,14 @@ If you're getting "Surprise" predictions for everything:
    - Early stopping prevents over-training
    - Best model is automatically saved
 
-## 📊 Technology Stack
+## Technology Stack
 
 - **Backend**: FastAPI, TensorFlow/Keras, OpenCV
 - **AI Models**: ResNet50V2, Google Gemini 2.5 Flash
 - **Frontend**: Vanilla JavaScript, HTML5, CSS3
 - **ML Tools**: NumPy, Pandas, Scikit-learn
 
-## 🤝 Contributing
+## Contributing
 
 1. Improve model architecture
 2. Add more emotion classes
@@ -234,17 +234,17 @@ If you're getting "Surprise" predictions for everything:
 4. Add batch processing
 5. Implement real-time webcam emotion tracking
 
-## 📝 License
+## License
 
 MIT License - feel free to use for your projects!
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - ResNet50V2: Microsoft Research
 - Google Gemini: Google AI
 - Dataset: [Your dataset source]
 
-## 📧 Support
+## Support
 
 For issues and questions:
 1. Check troubleshooting section
@@ -253,4 +253,4 @@ For issues and questions:
 
 ---
 
-**Made with ❤️ using AI + Deep Learning**
+**Made with using AI + Deep Learning**
